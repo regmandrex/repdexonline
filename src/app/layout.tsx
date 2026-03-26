@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RepDex — Your Guide to the Best AI & Tech Tools",
+    default: "RepDex — Best Free AI Tools Reviews for Content Creators",
     template: "%s",
   },
   description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "RepDex — Your Guide to the Best AI & Tech Tools",
+    title: "RepDex — Best Free AI Tools Reviews for Content Creators",
     description:
       "RepDex is an independent resource for creators and professionals. Honest reviews of AI tools, tech products, and productivity software.",
     url: SITE_URL,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RepDex — Your Guide to the Best AI & Tech Tools",
+    title: "RepDex — Best Free AI Tools Reviews for Content Creators",
     description:
       "Honest reviews of AI tools, tech products, and productivity software for creators and professionals.",
     images: ["/og-image.png"],
