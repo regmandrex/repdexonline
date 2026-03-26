@@ -4,7 +4,15 @@
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm --turbopack)",
       "Bash(printf 'no\\\\nno\\\\n')",
-      "Bash(yes \"no\")"
+      "Bash(yes \"no\")",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \":*)",
+      "Bash(grep -oh '<a href=\"\"\"\"/[^\"\"\"\"]*\"\"\"\"' src/lib/content/*.ts)",
+      "Bash(sed 's/\"\"\"\"//')",
+      "Bash(grep -o 'slug: \"\"\"\"[^\"\"\"\"]*\"\"\"\"' src/lib/posts.ts)",
+      "Bash(python3 -c \":*)"
     ]
   }
 }
