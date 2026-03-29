@@ -76,7 +76,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="alternate" type="application/rss+xml" title="RepDex RSS Feed" href="/feed.xml" />
+        <link rel="alternate" type="application/rss+xml" title="RepDex RSS Feed" href="/rss.xml" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.svg" />
       </head>

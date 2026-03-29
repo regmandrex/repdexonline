@@ -3,6 +3,7 @@ import { posts, SITE_URL, AUTHOR, getCategorySlug } from "@/lib/posts";
 import { getPostContent } from "@/lib/content";
 import JsonLd from "@/components/JsonLd";
 import NewsletterForm from "@/components/NewsletterForm";
+import FAQSection from "@/components/FAQSection";
 
 const featuredPost = posts[0];
 const latestPosts = posts.slice(0, 6); // Include all latest posts, including the featured one if it's recent
@@ -321,6 +322,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* ===== FAQ ===== */}
+      <FAQSection />
 
       {/* ===== NEWSLETTER ===== */}
       <section style={{ background: "linear-gradient(135deg, #1e40af 0%, #4f46e5 100%)" }}>

@@ -23,7 +23,7 @@ export async function GET() {
     <language>en-us</language>
     <managingEditor>hello@repdex.online (${AUTHOR})</managingEditor>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>
 </rss>`;
