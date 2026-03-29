@@ -1,0 +1,16 @@
+{
+  "name": "RepDex — Best Free AI Tools Reviews for Content Creators",
+  "short_name": "RepDex",
+  "description": "Expert, independent reviews of the best AI tools and tech reviews.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
