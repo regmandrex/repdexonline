@@ -1,8 +1,68 @@
 import Link from "next/link";
-import { posts, SITE_URL } from "@/lib/posts";
+import { posts, SITE_URL, AUTHOR, getCategorySlug } from "@/lib/posts";
+import { getPostContent } from "@/lib/content";
 import JsonLd from "@/components/JsonLd";
+import NewsletterForm from "@/components/NewsletterForm";
 
-const remainingPosts = posts.slice(1, 5);
+const featuredPost = posts[0];
+const latestPosts = posts.slice(0, 6); // Include all latest posts, including the featured one if it's recent
+
+const categories = [
+  {
+    name: "AI Tools Reviews",
+    href: "/category/ai-tools",
+    desc: "In-depth reviews and comparisons of the best AI-powered tools for creators and professionals.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 14.5M14.25 3.104c.251.023.501.05.75.082M19.8 14.5l-2.482 2.482c-.636.636-1.497.993-2.396.993H9.078a3.39 3.39 0 01-2.396-.993L4.2 14.5m15.6 0l.402.401a2.25 2.25 0 010 3.182l-2.93 2.93A6.75 6.75 0 0112.513 22.5h-1.026A6.75 6.75 0 016.728 21.013l-2.93-2.93a2.25 2.25 0 010-3.182L4.2 14.5" />
+      </svg>
+    ),
+    gradient: "from-blue-500 to-blue-600",
+  },
+  {
+    name: "ChatGPT Guides",
+    href: "/category/chatgpt-tips",
+    desc: "Practical prompting techniques, tips, and workflows to get the most out of ChatGPT.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+      </svg>
+    ),
+    gradient: "from-emerald-500 to-emerald-600",
+  },
+  {
+    name: "Tech Reviews",
+    href: "/category/tech",
+    desc: "Honest reviews of software, apps, and tech products that help you work smarter.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+      </svg>
+    ),
+    gradient: "from-purple-500 to-purple-600",
+  },
+  {
+    name: "Productivity Tools",
+    href: "/category/content-creation",
+    desc: "Tools and strategies to help creators and professionals be more productive every day.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    ),
+    gradient: "from-amber-500 to-orange-500",
+  },
+];
+
+function getCategoryBadgeClass(category: string): string {
+  const map: Record<string, string> = {
+    "AI Tools": "badge-ai",
+    "ChatGPT Tips": "badge-chatgpt",
+    "Content Creation": "badge-content",
+    "Tech": "badge-tech",
+  };
+  return map[category] || "badge-ai";
+}
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -10,7 +70,7 @@ const websiteSchema = {
   name: "RepDex",
   url: SITE_URL,
   description:
-    "Honest reviews, practical guides, and hands-on comparisons of AI and tech tools for content creators.",
+    "RepDex reviews and compares the best AI and tech tools for creators, professionals, and businesses.",
   publisher: {
     "@type": "Organization",
     name: "RepDex",
@@ -22,367 +82,261 @@ export default function Home() {
   return (
     <>
       <JsonLd data={websiteSchema} />
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 text-center">
-          <p className="text-blue-200 text-sm font-medium uppercase tracking-widest mb-4">
-            Your Guide to the Best AI &amp; Tech Tools
-          </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-5">
-            Discover the Best AI &amp; Tech
-            <br className="hidden md:block" /> Tools for Creators
+
+      {/* ===== HERO ===== */}
+      <section 
+        className="relative overflow-hidden" 
+        style={{ background: "linear-gradient(135deg, #1e40af 0%, #2563eb 40%, #3b82f6 70%, #6366f1 100%)" }}
+      >
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-300 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-5xl mx-auto px-4 py-20 md:py-28 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 animate-fade-in-up">
+            Find the Best AI and Tech Tools
+            <br className="hidden sm:block" /> for Your Workflow
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
-            Honest reviews, practical guides, and hands-on comparisons to help
-            you find the right tools for your work.
+          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 animate-fade-in-up stagger-1">
+            RepDex reviews and compares the tools that actually matter for
+            creators, professionals and businesses in 2026
           </p>
           <Link
             href="/blog"
-            className="inline-block bg-white text-blue-700 px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-blue-50 hover:no-underline transition-colors shadow-lg"
+            className="inline-block bg-white text-blue-700 px-8 py-3.5 rounded-xl font-semibold text-base hover:bg-blue-50 hover:no-underline transition-all shadow-lg hover:shadow-xl animate-fade-in-up stagger-2"
           >
-            Browse Articles
+            Browse Reviews
           </Link>
         </div>
       </section>
 
-      {/* Featured Full Article — Post 1 */}
-      <section className="max-w-3xl mx-auto px-4 py-14">
-        <div className="mb-6">
-          <Link
-            href="/category/ai-tools"
-            className="inline-block text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wide"
-          >
-            AI Tools
-          </Link>
-          <span className="text-xs text-[var(--muted)] ml-3">Featured Article</span>
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-3">
-          <Link
-            href="/best-free-ai-tools-for-content-creators"
-            className="text-[var(--foreground)] hover:text-blue-600"
-          >
-            Best Free AI Tools for Content Creators in 2026
-          </Link>
-        </h2>
-        <div className="flex items-center gap-3 text-sm text-[var(--muted)] mb-8">
-          <time>March 20, 2026</time>
-          <span>·</span>
-          <span>8 min read</span>
-        </div>
-
-        <div className="[&>p]:mb-4 [&>p]:leading-relaxed [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-4 [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&_a]:text-blue-600 [&_a:hover]:text-blue-800">
-          <p>
-            The AI tool landscape has changed dramatically over the past two years.
-            What used to cost hundreds of dollars a month is now available for free
-            — or close to it. For content creators working on tight budgets, that
-            shift matters. Whether you run a blog, manage social media accounts, or
-            produce video content, there are genuinely useful tools you can start
-            using today without paying anything upfront.
-          </p>
-
-          <p>
-            I spent the last few weeks testing dozens of tools that market
-            themselves as &quot;free&quot; and narrowed the list down to the ones
-            that actually deliver. Some have generous free tiers. Others are fully
-            free with optional upgrades. A couple are open source. What they share
-            is that they solve real problems for people who create content for a
-            living.
-          </p>
-
-          <h3>Writing and Text Generation</h3>
-
-          <p>
-            Let&apos;s start with the most obvious category. If you write blog
-            posts, newsletters, or social content, an{" "}
-            <a
-              href="https://openai.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              AI writing assistant
-            </a>{" "}
-            can save you hours every week. ChatGPT remains the most popular option
-            here, and its free tier is surprisingly capable for drafting outlines,
-            rewriting paragraphs, and brainstorming headlines.
-          </p>
-
-          <p>
-            Google&apos;s Gemini has caught up fast, especially for research-heavy
-            writing. It pulls from recent web data, which is genuinely helpful when
-            you&apos;re writing about current events or trending topics. Claude by
-            Anthropic deserves a mention too — its free tier handles longer
-            documents well, and many writers prefer its more natural tone. You can
-            read our detailed{" "}
-            <Link href="/chatgpt-vs-gemini-vs-claude-best-ai-writing">
-              comparison of ChatGPT, Gemini, and Claude
-            </Link>{" "}
-            for a closer look.
-          </p>
-
-          <p>
-            Beyond the big three, tools like Rytr and Copy.ai still offer free
-            plans that work well enough for shorter content. They won&apos;t
-            replace a dedicated writing workflow, but they&apos;re handy for
-            knocking out product descriptions or social captions in a hurry.
-          </p>
-
-          <h3>Image Generation and Design</h3>
-
-          <p>
-            Visual content is non-negotiable for most creators. Canva&apos;s free
-            plan now includes a basic AI image generator, which is enough for blog
-            headers and social graphics. It won&apos;t produce photo-realistic
-            results, but for illustrations and simple compositions, it does the
-            job.
-          </p>
-
-          <p>
-            Microsoft Designer (formerly Bing Image Creator) runs on DALL-E and
-            gives you a daily allotment of free generations. The quality is
-            consistently good, and you can use the images commercially. For
-            creators who need custom visuals but can&apos;t justify a Midjourney
-            subscription, this is the one I recommend most.
-          </p>
-
-          <p>
-            Leonardo.ai is another solid pick. The free plan gives you around 150
-            credits per day, which is enough for 15-30 images depending on the
-            settings. The community models on Leonardo produce some genuinely
-            impressive results, and the UI is intuitive even if you&apos;ve never
-            used an image generator before.
-          </p>
-
-          <h3>Content Cleanup and Editing</h3>
-
-          <p>
-            This is a category that a lot of creators overlook, and it&apos;s
-            actually one of the most useful. If you use AI to draft content — and
-            most of us do at this point — the output usually needs cleanup before
-            it&apos;s ready to publish. There are{" "}
-            <a
-              href="https://gptcleanuptools.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              free AI tools
-            </a>{" "}
-            specifically built for stripping out the hidden formatting artifacts
-            and odd characters that AI-generated text tends to carry. It&apos;s a
-            small step that makes a noticeable difference in the quality of your
-            final output.
-          </p>
-
-          <p>
-            Grammarly&apos;s free tier handles basic grammar and spelling, but
-            it&apos;s their tone detection that I find most useful for editorial
-            work. Hemingway Editor is completely free and does one thing well: it
-            highlights overly complex sentences and passive voice. Running AI
-            drafts through Hemingway is a habit worth building. You might also
-            want to read our guide on{" "}
-            <Link href="/how-to-clean-chatgpt-text-before-publishing">
-              cleaning ChatGPT text before publishing
-            </Link>{" "}
-            for more specific tips.
-          </p>
-
-          <h3>Video and Audio Tools</h3>
-
-          <p>
-            CapCut remains the best free video editor for short-form content. Its
-            AI-powered captions are nearly perfect for English, and auto-editing
-            features make it possible to produce polished videos with minimal
-            experience. The desktop version is more full-featured, but even the
-            mobile app is capable enough for TikTok and Reels.
-          </p>
-
-          <p>
-            For audio, Descript&apos;s free plan lets you transcribe and edit up to
-            an hour of audio per month. The transcription quality is excellent, and
-            the ability to edit audio by editing text is genuinely transformative
-            if you produce podcasts or voiceovers. ElevenLabs offers a small free
-            tier for text-to-speech that sounds remarkably natural.
-          </p>
-
-          <h3>Research and Organization</h3>
-
-          <p>
-            Perplexity AI has quickly become one of my favorite research tools.
-            The free version gives you a solid number of &quot;Pro&quot; searches per day
-            and unlimited basic searches. For content research — finding stats,
-            checking facts, exploring topics — it&apos;s faster and more useful
-            than traditional search. The citations make it easy to verify what
-            you find.
-          </p>
-
-          <p>
-            Notion&apos;s free tier includes their AI assistant, which is useful
-            for summarizing notes, generating outlines, and organizing content
-            calendars. If you already use Notion for project management, the AI
-            features slot right into your existing workflow.
-          </p>
-
-          <h3>What to Keep in Mind</h3>
-
-          <p>
-            Free tools always come with trade-offs. Usage limits, watermarks,
-            fewer features, slower processing — you&apos;ll hit walls eventually.
-            The key is knowing which tools give you enough free capacity to be
-            genuinely useful and which ones are just glorified demos. Everything on
-            this list falls into the first camp.
-          </p>
-
-          <p>
-            The space is also moving fast. Tools that were paid-only six months ago
-            now have free tiers. Features that were premium are becoming standard.
-            If you tried a tool last year and dismissed it, it&apos;s worth
-            checking again. For the latest developments in how these{" "}
-            <a
-              href="https://www.forbes.com/ai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              AI content tools
-            </a>{" "}
-            are evolving, it&apos;s worth following industry coverage to stay
-            current.
-          </p>
-
-          <p>
-            Start with one or two tools that address your biggest bottleneck.
-            Don&apos;t try to adopt everything at once. A writing assistant plus a
-            cleanup tool plus an image generator covers most content needs, and all
-            three can be had for free. That&apos;s a solid foundation to build on.
+      {/* ===== FEATURED CATEGORIES ===== */}
+      <section className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            What We Cover
+          </h2>
+          <p className="text-[var(--muted)] max-w-xl mx-auto">
+            Practical reviews and guides across the categories that matter most
+            to creators and professionals.
           </p>
         </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4">
-        <hr className="border-[var(--border)]" />
-      </div>
-
-      {/* More Articles — remaining 4 posts as cards */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <h2 className="text-2xl font-bold mb-8">More Articles</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {remainingPosts.map((post) => (
-            <article
-              key={post.slug}
-              className="border border-[var(--border)] rounded-xl p-6 hover:shadow-lg transition-shadow bg-white"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {categories.map((cat, i) => (
+            <Link
+              key={cat.name}
+              href={cat.href}
+              className={`group relative overflow-hidden rounded-xl border border-[var(--border)] p-6 hover:no-underline card-hover bg-white animate-fade-in-up stagger-${i + 1}`}
             >
-              <span className="inline-block text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wide">
-                {post.category}
-              </span>
-              <h3 className="text-lg font-semibold mt-3 mb-2">
-                <Link
-                  href={`/${post.slug}`}
-                  className="text-[var(--foreground)] hover:text-blue-600"
-                >
-                  {post.title}
-                </Link>
-              </h3>
-              <p className="text-sm text-[var(--muted)] mb-4 leading-relaxed">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center justify-between text-xs text-[var(--muted)] pt-3 border-t border-[var(--border)]">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
+              <div
+                className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${cat.gradient} text-white mb-4 group-hover:scale-110 transition-transform`}
+              >
+                {cat.icon}
               </div>
-            </article>
+              <h3 className="font-semibold text-[var(--foreground)] mb-2 group-hover:text-[var(--accent)] transition-colors">
+                {cat.name}
+              </h3>
+              <p className="text-sm text-[var(--muted)] leading-relaxed">
+                {cat.desc}
+              </p>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="bg-[var(--surface)] border-y border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-4 py-14">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            Explore by Category
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                name: "AI Tools",
-                href: "/category/ai-tools",
-                desc: "Reviews and roundups of the best AI-powered tools",
-                icon: "🤖",
-              },
-              {
-                name: "ChatGPT Tips",
-                href: "/category/chatgpt-tips",
-                desc: "Prompts, techniques, and guides for ChatGPT",
-                icon: "💬",
-              },
-              {
-                name: "Content Creation",
-                href: "/category/content-creation",
-                desc: "Guides for creating better content faster",
-                icon: "✍️",
-              },
-              {
-                name: "Tech",
-                href: "/category/tech",
-                desc: "Tech reviews, tools, and software guides",
-                icon: "💻",
-              },
-            ].map((cat) => (
+
+      {/* ===== FEATURED ARTICLE ===== */}
+      <section className="bg-[var(--surface-alt)] py-16 md:py-24 border-y border-[var(--border)]">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[var(--border-light)]">
+            <div className="mb-10 text-center max-w-2xl mx-auto">
               <Link
-                key={cat.name}
-                href={cat.href}
-                className="border border-[var(--border)] rounded-xl p-6 text-center hover:shadow-lg hover:no-underline transition-shadow bg-white group"
+                href={`/category/${getCategorySlug(featuredPost.category)}`}
+                className={`badge ${getCategoryBadgeClass(featuredPost.category)} mb-6 hover:no-underline inline-block`}
               >
-                <span className="text-3xl mb-3 block">{cat.icon}</span>
-                <h3 className="font-semibold text-[var(--foreground)] mb-1 group-hover:text-blue-600 transition-colors">
-                  {cat.name}
-                </h3>
-                <p className="text-xs text-[var(--muted)]">{cat.desc}</p>
+                Featured {featuredPost.category} Article
               </Link>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] mb-6 leading-tight tracking-tight">
+                <Link 
+                  href={`/${featuredPost.slug}`}
+                  className="text-[var(--foreground)] hover:text-[var(--accent)] hover:no-underline transition-colors"
+                >
+                  {featuredPost.title}
+                </Link>
+              </h2>
+              <div className="flex items-center justify-center gap-4 text-sm text-[var(--muted)]">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[8px] font-bold text-blue-700">RD</span>
+                  <span className="font-medium">{AUTHOR}</span>
+                </div>
+                <span>·</span>
+                <time className="font-medium">{featuredPost.date}</time>
+                <span>·</span>
+                <span className="font-medium">{featuredPost.readTime}</span>
+              </div>
+            </div>
+            
+            <div 
+              className="prose-article article-content mt-12"
+              dangerouslySetInnerHTML={{ __html: getPostContent(featuredPost.slug) || "" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== HOW REPDEX HELPS (Value Proposition) ===== */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-14 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-5 flex items-center justify-center gap-3">
+              <span className="w-10 h-1 text-[var(--accent)] bg-[var(--accent)] rounded-full hidden md:block"></span>
+              The RepDex Difference
+              <span className="w-10 h-1 text-[var(--accent)] bg-[var(--accent)] rounded-full hidden md:block"></span>
+            </h2>
+            <p className="text-lg text-[var(--muted)] leading-relaxed font-medium">
+              RepDex is an independent review publication built on one simple rule: 
+              <span className="text-[var(--foreground)]"> We only review tools we actually use.</span>
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {/* Value 1 */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 border border-blue-100 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[var(--foreground)]">Real-World Testing</h3>
+              <p className="text-[var(--muted)] leading-relaxed text-sm px-2">
+                We don't just read the landing pages. We build projects, write content, and run tasks using every AI tool we review to see where it actually stumbles.
+              </p>
+            </div>
+            
+            {/* Value 2 */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center mb-6 border border-indigo-100 group-hover:bg-indigo-600 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-indigo-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[var(--foreground)]">Editorial Integrity</h3>
+              <p className="text-[var(--muted)] leading-relaxed text-sm px-2">
+                We take zero sponsored placements. If a tool is on our "best" list, it's because it earned its spot through performance, not a payment.
+              </p>
+            </div>
+            
+            {/* Value 3 */}
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 border border-emerald-100 group-hover:bg-emerald-600 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[var(--foreground)]">Global Perspective</h3>
+              <p className="text-[var(--muted)] leading-relaxed text-sm px-2">
+                Based across the US, UK, and Dubai, our team reviews tools that work globally, ensuring creators everywhere find the best apps for their region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LATEST ARTICLES ===== */}
+      <section className="bg-[var(--surface)] border-y border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold">Latest Articles</h2>
+            <Link
+              href="/blog"
+              className="text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] hover:no-underline"
+            >
+              View all &rarr;
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latestPosts.map((post, i) => (
+              <article
+                key={post.slug}
+                className={`bg-white border border-[var(--border)] rounded-xl overflow-hidden card-hover animate-fade-in-up stagger-${i + 1}`}
+              >
+                {/* Category gradient header */}
+                <div className="h-2 bg-gradient-to-r from-blue-500 to-indigo-500" />
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`badge ${getCategoryBadgeClass(post.category)}`}>
+                      {post.category}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-[var(--foreground)] mb-2 leading-snug">
+                    <Link
+                      href={`/${post.slug}`}
+                      className="text-[var(--foreground)] hover:text-[var(--accent)] hover:no-underline"
+                    >
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-[var(--muted)] mb-4 leading-relaxed line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-xs text-[var(--muted-light)] pt-3 border-t border-[var(--border-light)]">
+                    <div className="flex items-center gap-2">
+                      <span>{AUTHOR}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <time>{post.date}</time>
+                      <span>·</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Snippet */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
+      {/* ===== ABOUT SNIPPET ===== */}
+      <section className="max-w-6xl mx-auto px-4 py-16 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">About RepDex</h2>
-          <p className="text-[var(--muted)] mb-5 leading-relaxed">
-            RepDex is an independent resource for creators and professionals
-            looking for honest reviews of AI and tech tools. We test tools
-            ourselves, write practical guides, and share what actually works —
-            no sponsored rankings, no affiliate pressure.
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">About RepDex</h2>
+          <p className="text-[var(--muted)] leading-relaxed mb-6">
+            RepDex is an independent tech and AI tools review publication,
+            founded to help creators and professionals cut through the noise
+            and find tools that genuinely improve their workflow. We review and
+            compare AI writing assistants, productivity apps, content creation
+            tools, and emerging tech — always based on hands-on testing, never
+            on paid placements. Our editorial team is based online, serving
+            readers in the US, UK and Dubai. We believe that honest, unbiased
+            reviews are the most valuable resource in a market flooded with
+            sponsored recommendations. No sponsored content. No affiliate bias.
+            Just honest, independent reviews written by people who actually use
+            the tools.
           </p>
           <Link
             href="/about"
-            className="text-sm font-semibold text-blue-600 hover:text-blue-800"
+            className="text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] hover:no-underline"
           >
             Learn more about us &rarr;
           </Link>
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-14">
+      {/* ===== NEWSLETTER ===== */}
+      <section style={{ background: "linear-gradient(135deg, #1e40af 0%, #4f46e5 100%)" }}>
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
           <div className="max-w-lg mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-2">Stay in the Loop</h2>
-            <p className="text-sm text-blue-100 mb-6">
-              Get our latest reviews and guides delivered to your inbox. No
-              spam, unsubscribe anytime.
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              Get Weekly Tool Recommendations
+            </h2>
+            <p className="text-sm text-blue-100 mb-8">
+              Join thousands of creators who get our best tool reviews
+              delivered to their inbox every week.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button
-                type="button"
-                className="bg-white text-blue-700 px-6 py-3 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors"
-              >
-                Subscribe
-              </button>
-            </div>
+            <NewsletterForm />
+            <p className="text-xs text-blue-200 mt-4">
+              No spam. Unsubscribe anytime.
+            </p>
           </div>
         </div>
       </section>

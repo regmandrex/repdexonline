@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   posts,
   getPostBySlug,
-  existingSlugs,
   getCategorySlug,
   SITE_URL,
   AUTHOR,
@@ -12,12 +11,11 @@ import {
 import { getPostContent } from "@/lib/content";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedPosts from "@/components/RelatedPosts";
+import ShareButtons from "@/components/ShareButtons";
 import JsonLd from "@/components/JsonLd";
 
-const dynamicPosts = posts.filter((p) => !existingSlugs.has(p.slug));
-
 export function generateStaticParams() {
-  return dynamicPosts.map((p) => ({ slug: p.slug }));
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -82,49 +80,66 @@ export default async function PostPage({
   };
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-10">
+    <article className="max-w-4xl mx-auto px-4 py-8 md:py-16 animate-fade-in">
       <JsonLd data={articleSchema} />
 
       <Breadcrumbs
         items={[
+          { label: "Blog", href: "/blog" },
           { label: post.category, href: `/category/${categorySlug}` },
           { label: post.title, href: `/${post.slug}` },
         ]}
       />
 
-      <div className="mb-8">
+      <header className="mb-12 pb-10 border-b border-[var(--border-light)]">
         <Link
           href={`/category/${categorySlug}`}
-          className="text-xs font-medium text-blue-600 uppercase tracking-wide"
+          className={`badge ${categorySlug === 'ai-tools' ? 'badge-ai' : categorySlug === 'chatgpt-tips' ? 'badge-chatgpt' : categorySlug === 'content-creation' ? 'badge-content' : 'badge-tech'} mb-5 inline-block hover:no-underline`}
         >
           {post.category}
         </Link>
-        <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3 leading-tight">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] mb-6 leading-tight tracking-tight">
           {post.title}
         </h1>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[var(--muted)]">
-          <span>By {AUTHOR}</span>
-          <span>·</span>
-          <time dateTime={post.dateISO}>{post.date}</time>
-          <span>·</span>
-          <span>{post.readTime}</span>
-          <span>·</span>
-          <span>Updated: {post.modifiedISO}</span>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--muted)]">
+          <div className="flex items-center gap-2">
+            <span className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">RD</span>
+            <span className="font-semibold text-[var(--foreground)]">
+              {AUTHOR}
+            </span>
+          </div>
+          <span className="hidden sm:inline text-[var(--border)]">•</span>
+          <time dateTime={post.dateISO} className="font-medium">{post.date}</time>
+          <span className="hidden sm:inline text-[var(--border)]">•</span>
+          <span className="font-medium">{post.readTime}</span>
         </div>
-      </div>
+
+        <div className="mt-8">
+          <ShareButtons title={post.title} slug={post.slug} />
+        </div>
+      </header>
 
       <div
-        className="[&>p]:mb-4 [&>p]:leading-relaxed [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3 [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&>ul>li]:list-disc [&>ol]:mb-4 [&>ol]:pl-6 [&>ol>li]:mb-2 [&>ol>li]:list-decimal [&_a]:text-blue-600 [&_a:hover]:text-blue-800"
+        className="prose-article max-w-none"
         dangerouslySetInnerHTML={{ __html: content }}
       />
 
-      <div className="mt-10 pt-6 border-t border-[var(--border)]">
-        <Link href="/blog" className="text-sm font-medium text-blue-600">
-          &larr; Back to all articles
-        </Link>
-      </div>
+      <footer className="mt-16 pt-8 border-t border-[var(--border)]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <Link
+            href="/blog"
+            className="group inline-flex items-center text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] hover:no-underline"
+          >
+            <span className="mr-2 transition-transform group-hover:-translate-x-1">&larr;</span>
+            Back to all articles
+          </Link>
+          <ShareButtons title={post.title} slug={post.slug} />
+        </div>
+      </footer>
 
-      <RelatedPosts currentSlug={post.slug} category={post.category} />
+      <section className="mt-16">
+        <RelatedPosts currentSlug={post.slug} category={post.category} />
+      </section>
     </article>
   );
 }

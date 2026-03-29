@@ -262,7 +262,7 @@ export const chatgptTipsContent: Record<string, string> = {
 
 <h2>Writing Assistance Without Cheating</h2>
 
-<p>There's a responsible way to use ChatGPT for writing assignments, and pairing it with one of the <a href="/best-ai-writing-assistants-2026">best AI writing assistants</a> can help with grammar and structure without crossing ethical lines. Use it to brainstorm ideas, check your argument's logic, or get feedback on a paragraph you've already written. Don't use it to generate the paper itself.</p>
+<p>There's a responsible way to use ChatGPT for writing assignments, and pairing it with one of the <a href="/best-ai-writing-assistants">best AI writing assistants</a> can help with grammar and structure without crossing ethical lines. Use it to brainstorm ideas, check your argument's logic, or get feedback on a paragraph you've already written. Don't use it to generate the paper itself.</p>
 
 <p>Helpful prompts for honest writing assistance: "Here's my thesis statement. Can you identify any logical weaknesses?" "I've written this introduction. Does the argument flow logically into my thesis?" "What are three counterarguments to this position that I should address in my paper?"</p>
 
@@ -270,7 +270,7 @@ export const chatgptTipsContent: Record<string, string> = {
 
 <h2>Time Management and Organization</h2>
 
-<p>Beyond academics, ChatGPT can help with the logistics of student life — and when combined with the right <a href="/best-productivity-apps-2026">productivity apps</a>, it becomes even more powerful. Ask it to help you create a study schedule: "I have exams in biology, history, and calculus over the next two weeks. Biology is my weakest subject. Create a study plan that gives more time to biology while keeping the other subjects on track."</p>
+<p>Beyond academics, ChatGPT can help with the logistics of student life — and when combined with the right <a href="/best-productivity-apps">productivity apps</a>, it becomes even more powerful. Ask it to help you create a study schedule: "I have exams in biology, history, and calculus over the next two weeks. Biology is my weakest subject. Create a study plan that gives more time to biology while keeping the other subjects on track."</p>
 
 <p>You can also use it to draft emails to professors (asking for extensions, clarifying assignments, or requesting meetings) and organize group project responsibilities. These are small time-savers that add up over a semester.</p>
 
@@ -288,7 +288,7 @@ export const chatgptTipsContent: Record<string, string> = {
 
 <h2>Platform-Specific Prompting Matters</h2>
 
-<p>The biggest rookie mistake is asking ChatGPT to write a "social media caption" without specifying the platform. Instagram captions, LinkedIn posts, Twitter threads, and TikTok descriptions are fundamentally different animals. They have different audiences, different norms, different ideal lengths, and different engagement patterns — something any experienced <a href="/ai-tools-for-marketers-2026">marketer</a> already knows.</p>
+<p>The biggest rookie mistake is asking ChatGPT to write a "social media caption" without specifying the platform. Instagram captions, LinkedIn posts, Twitter threads, and TikTok descriptions are fundamentally different animals. They have different audiences, different norms, different ideal lengths, and different engagement patterns — something any experienced <a href="/ai-tools-for-marketers">marketer</a> already knows.</p>
 
 <p>Your prompt should always specify the platform. "Write an Instagram caption for a fitness brand posting a workout video" produces dramatically different output than "write a LinkedIn post for a fitness brand sharing workout content." Same topic, completely different execution.</p>
 
@@ -506,7 +506,7 @@ export const chatgptTipsContent: Record<string, string> = {
 
 <p>At the paid level, ChatGPT Plus, Claude Pro, and Gemini Advanced all hover around the same price point. The value depends entirely on your use case. ChatGPT Plus gives you priority access and advanced features like custom GPTs. Claude Pro offers higher usage limits and access to the most capable model. Gemini Advanced includes deep Google Workspace integration.</p>
 
-<p>If you're only paying for one, choose based on your primary use case. Writers often get the most from Claude or ChatGPT. Researchers benefit from Gemini's real-time access. Professionals embedded in Microsoft's suite get the most from Copilot. For an overview of free options, see our <a href="/best-free-ai-tools-2026">best free AI tools for 2026</a> roundup.</p>
+<p>If you're only paying for one, choose based on your primary use case. Writers often get the most from Claude or ChatGPT. Researchers benefit from Gemini's real-time access. Professionals embedded in Microsoft's suite get the most from Copilot. For an overview of free options, see our <a href="/best-free-ai-tools">best free AI tools for 2026</a> roundup.</p>
 
 <h2>Which One Should You Actually Use?</h2>
 

@@ -2,30 +2,27 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — RepDex",
+  title: "Contact RepDex — Get in Touch With Our Team",
   description:
-    "Get in touch with RepDex. Questions, feedback, or suggestions — we'd love to hear from you.",
+    "Have a question or want to suggest a tool for review? Contact the RepDex editorial team. We'd love to hear from you.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact — RepDex",
+    title: "Contact RepDex — Get in Touch With Our Team",
     description:
-      "Get in touch with RepDex. Questions, feedback, or suggestions — we'd love to hear from you.",
+      "Have a question or want to suggest a tool for review? Contact the RepDex editorial team.",
   },
 };
 
 export default function ContactPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <p className="text-[var(--muted)] mb-8">
-        Have a question, feedback, or a suggestion for a tool we should
-        review? Drop us a message below or email us directly at{" "}
-        <a href="mailto:hello@repdex.online" className="text-[var(--accent)]">
-          hello@repdex.online
-        </a>
-        .
+    <div className="max-w-3xl mx-auto px-4 py-12 md:py-16">
+      <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
+      <p className="text-[var(--muted)] mb-8 leading-relaxed">
+        Have a question or want to suggest a tool for review? We&apos;d love to
+        hear from you. Fill out the form below and our team will get back to
+        you as soon as possible.
       </p>
 
       <ContactForm />

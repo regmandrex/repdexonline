@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransitionBar from "@/components/PageTransitionBar";
 import { SITE_URL } from "@/lib/posts";
+import { Suspense } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,18 +21,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RepDex — Best Free AI Tools Reviews for Content Creators",
-    template: "%s",
+    default: "RepDex | The Best AI Tools & Tech Reviews for Growth (2026)",
+    template: "%s | RepDex",
   },
   description:
-    "RepDex is an independent resource for creators and professionals. Honest reviews of AI tools, tech products, and productivity software.",
+    "Expert, independent reviews of the best AI tools and tech reviews. We test the latest software so you don't have to.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "RepDex — Best Free AI Tools Reviews for Content Creators",
+    title: "RepDex | Expert AI Tool Reviews & Tech Comparisons",
     description:
-      "RepDex is an independent resource for creators and professionals. Honest reviews of AI tools, tech products, and productivity software.",
+      "Cut through the AI hype. We provide honest, field-tested reviews of the best productivity and AI tools for creators and professionals.",
     url: SITE_URL,
     siteName: "RepDex",
     type: "website",
@@ -40,15 +42,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RepDex — AI & Tech Tools Reviews",
+        alt: "RepDex — Honest AI & Tech Tool Reviews",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RepDex — Best Free AI Tools Reviews for Content Creators",
+    title: "RepDex | Honest AI Reviews & Tech Guides",
     description:
-      "Honest reviews of AI tools, tech products, and productivity software for creators and professionals.",
+      "Expert testing and comparisons of the highest-rated AI tools for 2026. Real reviews, no fluff.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -72,6 +74,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <Suspense fallback={null}>
+          <PageTransitionBar />
+        </Suspense>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

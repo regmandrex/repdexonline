@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { posts, type Post } from "@/lib/posts";
+import { posts, type Post, getCategorySlug } from "@/lib/posts";
+
+function getCategoryBadgeClass(category: string): string {
+  const map: Record<string, string> = {
+    "AI Tools": "badge-ai",
+    "ChatGPT Tips": "badge-chatgpt",
+    "Content Creation": "badge-content",
+    "Tech": "badge-tech",
+  };
+  return map[category] || "badge-ai";
+}
 
 export default function RelatedPosts({
   currentSlug,
@@ -27,24 +37,30 @@ export default function RelatedPosts({
   if (related.length === 0) return null;
 
   return (
-    <section className="mt-12 pt-8 border-t border-[var(--border)]">
-      <h2 className="text-xl font-bold mb-5">Related Articles</h2>
-      <div className="grid sm:grid-cols-3 gap-4">
+    <section className="mt-14 pt-8 border-t border-[var(--border)]">
+      <h2 className="text-xl font-bold mb-6">Related Articles</h2>
+      <div className="grid sm:grid-cols-3 gap-5">
         {related.slice(0, 3).map((post) => (
           <Link
             key={post.slug}
             href={`/${post.slug}`}
-            className="border border-[var(--border)] rounded-lg p-4 hover:shadow-md hover:no-underline transition-shadow"
+            className="group border border-[var(--border)] rounded-xl p-5 hover:no-underline card-hover bg-white"
           >
-            <span className="text-xs font-medium text-blue-600 uppercase tracking-wide">
+            <span className={`badge ${getCategoryBadgeClass(post.category)}`}>
               {post.category}
             </span>
-            <h3 className="text-sm font-semibold mt-1 text-[var(--foreground)] leading-snug">
+            <h3 className="text-sm font-semibold mt-3 text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
               {post.title}
             </h3>
-            <span className="text-xs text-[var(--muted)] mt-2 block">
-              {post.readTime}
-            </span>
+            <div className="flex items-center gap-2 mt-3">
+              <span className="text-xs text-[var(--muted-light)]">
+                {post.readTime}
+              </span>
+              <span className="text-xs text-[var(--muted-light)]">·</span>
+              <time className="text-xs text-[var(--muted-light)]">
+                {post.date}
+              </time>
+            </div>
           </Link>
         ))}
       </div>

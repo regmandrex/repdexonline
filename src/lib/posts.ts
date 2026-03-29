@@ -20,29 +20,29 @@ export const posts: Post[] = [
     slug: "best-free-ai-tools-for-content-creators",
     title: "Best Free AI Tools for Content Creators in 2026",
     excerpt: "A practical roundup of the best free AI tools that writers, bloggers, and creators can start using today without spending a dime.",
-    date: "March 20, 2026",
-    dateISO: "2026-03-20",
-    modifiedISO: "2026-03-22",
+    date: "March 24, 2026",
+    dateISO: "2026-03-24",
+    modifiedISO: "2026-03-26",
     category: "AI Tools",
     readTime: "8 min read",
-    metaTitle: "Top Free AI Tools for Creators 2026 — Reviewed | RepDex",
-    metaDescription: "Discover the best free AI tools for content creators in 2026. From writing assistants to image generators, these tools help bloggers and creators work smarter.",
+    metaTitle: "Essential Free AI Software: 65+ Tools for Creators",
+    metaDescription: "The ultimate list of 65+ free AI tools for bloggers, writers, and creators. Tested and reviewed for efficiency, quality, and real-world value in 2026.",
   },
   // ===== REMAINING POSTS (by date, newest first) =====
   {
     slug: "how-to-create-content-faster-with-ai",
     title: "How to Create Content Faster with AI",
     excerpt: "AI can cut your content production time in half — if you know which tools to use and when. Here's a practical breakdown.",
-    date: "March 24, 2026",
-    dateISO: "2026-03-24",
-    modifiedISO: "2026-03-26",
+    date: "March 23, 2026",
+    dateISO: "2026-03-23",
+    modifiedISO: "2026-03-25",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Create Better Content 3x Faster with AI Tools 2026 | RepDex",
-    metaDescription: "Learn how to create content faster using AI tools. Practical tips for writers and bloggers to speed up research, drafting, and editing.",
+    metaTitle: "AI Content Creation Guide: How to Write 10x Faster with AI",
+    metaDescription: "Master the art of AI-assisted content creation. Learn how to cut production time by 80% using the right AI tools and workflows.",
   },
   {
-    slug: "best-free-ai-tools-2026",
+    slug: "best-free-ai-tools",
     title: "Best Free AI Tools You Should Try in 2026",
     excerpt: "Not every great AI tool costs money. These free options are genuinely worth your time in 2026.",
     date: "March 23, 2026",
@@ -50,7 +50,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-25",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best Free AI Tools in 2026 — Tested & Reviewed | RepDex",
+    metaTitle: "Genuinely Worth It: The Best No-Cost AI Software",
     metaDescription: "The best free AI tools in 2026 across writing, design, research, and productivity. Tested and reviewed for creators and professionals.",
   },
   {
@@ -62,11 +62,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-24",
     category: "ChatGPT Tips",
     readTime: "7 min read",
-    metaTitle: "ChatGPT for Content Creation: Complete 2026 Guide | RepDex",
+    metaTitle: "ChatGPT for Content Creation: Practical Guides & Prompts for Bloggers",
     metaDescription: "A practical guide to using ChatGPT for content creation. Tips for drafting, outlining, and editing blog posts, social media, and newsletters.",
   },
   {
-    slug: "best-productivity-apps-2026",
+    slug: "best-productivity-apps",
     title: "Best Productivity Apps in 2026",
     excerpt: "The productivity app landscape keeps shifting. These are the ones actually worth installing right now.",
     date: "March 21, 2026",
@@ -74,7 +74,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-23",
     category: "Tech",
     readTime: "7 min read",
-    metaTitle: "Best Productivity Apps 2026 — Tested & Ranked | RepDex",
+    metaTitle: "Maximum Efficiency: Top Productivity Software Reviewed",
     metaDescription: "Reviewed and ranked: the best productivity apps in 2026 for task management, note-taking, focus, and getting things done.",
   },
   {
@@ -86,7 +86,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-21",
     category: "Content Creation",
     readTime: "7 min read",
-    metaTitle: "AI Content Creation Workflow: Step-by-Step Guide | RepDex",
+    metaTitle: "Efficient AI Content Workflow: Research, Draft & Edit Faster",
     metaDescription: "How to build an efficient AI content creation workflow. Step-by-step guide covering research, drafting, editing, and publishing with AI tools.",
   },
   {
@@ -98,7 +98,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-20",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Best AI Tools for Students 2026 — Free & Paid | RepDex",
+    metaTitle: "School & Study AI: Best Tools for Essays and Research",
     metaDescription: "The best AI tools for students in 2026. Free and affordable tools for research, writing, studying, and academic work.",
   },
   {
@@ -110,8 +110,8 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-19",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "ChatGPT Text Cleanup: Fix Hidden Formatting Issues | RepDex",
-    metaDescription: "Learn why ChatGPT text needs cleaning before publishing, common hidden characters and formatting issues, and step-by-step methods to fix them.",
+    metaTitle: "How to Edit ChatGPT Content: Practical Tips for Clean AI Writing",
+    metaDescription: "Why you should never publish raw AI output. Learn the exact steps to clean, format, and humanize ChatGPT text before it goes live.",
   },
   {
     slug: "how-to-be-more-productive-with-ai",
@@ -122,7 +122,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-18",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Get More Done with AI: Productivity Strategies 2026 | RepDex",
+    metaTitle: "Level Up Productivity with AI: Automated Workflows for Creators",
     metaDescription: "Practical ways to boost your productivity with AI tools. Real strategies for automating tasks, speeding up work, and staying focused.",
   },
   {
@@ -134,7 +134,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-17",
     category: "ChatGPT Tips",
     readTime: "6 min read",
-    metaTitle: "Best ChatGPT Prompts for Bloggers 2026 — Tested | RepDex",
+    metaTitle: "Better ChatGPT Prompts for Bloggers: Real-World Examples & Tips",
     metaDescription: "Tested ChatGPT prompts for bloggers. Get better outlines, drafts, headlines, and social media content with these practical prompt templates.",
   },
   {
@@ -146,11 +146,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-16",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Writing Tools for US, UK & Dubai Creators | RepDex",
+    metaTitle: "Global AI Writing: Best Tools for US, UK & Dubai Creators",
     metaDescription: "Review of the best AI writing tools for content creators in the US, UK, and Dubai. Free and affordable options for English-language content creation.",
   },
   {
-    slug: "best-ai-writing-assistants-2026",
+    slug: "best-ai-writing-assistants",
     title: "Best AI Writing Assistants in 2026",
     excerpt: "The AI writing assistant market has matured. Here are the ones that actually help you write better, faster.",
     date: "March 13, 2026",
@@ -158,7 +158,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-15",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Writing Assistants 2026 — Compared | RepDex",
+    metaTitle: "Expert Writing Help: Highest-Rated AI Assistants Compared",
     metaDescription: "The best AI writing assistants in 2026, compared. Features, pricing, and which one suits different types of writers and content creators.",
   },
   {
@@ -170,11 +170,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-14",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Tools for Small Businesses in 2026 | RepDex",
+    metaTitle: "Small Business AI Guide: Practical Tools to Scale Your Company",
     metaDescription: "The best AI tools for small businesses in 2026. Affordable, practical tools for marketing, customer service, content, and operations.",
   },
   {
-    slug: "best-tools-for-content-creators-2026",
+    slug: "best-tools-for-content-creators",
     title: "Best Tools for Content Creators in 2026",
     excerpt: "The essential toolkit for content creators this year — from writing and design to scheduling and analytics.",
     date: "March 11, 2026",
@@ -182,7 +182,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-13",
     category: "Content Creation",
     readTime: "7 min read",
-    metaTitle: "Essential Toolkit for Content Creators in 2026 | RepDex",
+    metaTitle: "Ultimate Content Toolkit: Best Apps for Writing and Video",
     metaDescription: "The best tools for content creators in 2026. Writing, design, video, scheduling, and analytics tools reviewed and compared.",
   },
   {
@@ -194,7 +194,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-12",
     category: "AI Tools",
     readTime: "9 min read",
-    metaTitle: "ChatGPT vs Gemini vs Claude — Best AI Writer 2026 | RepDex",
+    metaTitle: "The Big Three: Which AI Assistant Writes the Best Content?",
     metaDescription: "Detailed comparison of ChatGPT, Gemini, and Claude for writing. Pros, cons, and which AI assistant is best for different content creation needs in 2026.",
   },
   {
@@ -206,7 +206,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-11",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "Best Remote Work Tools in 2026 — Reviewed | RepDex",
+    metaTitle: "Remote Success: Essential Software for Digital Nomads",
     metaDescription: "The best tools for remote workers in 2026. Communication, project management, focus, and productivity tools reviewed.",
   },
   {
@@ -218,7 +218,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-10",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Top AI Tools for Social Media Management 2026 | RepDex",
+    metaTitle: "AI Social Media Tools 2026: Best Software for Auto-Posting & Captions",
     metaDescription: "Top AI tools for social media management in 2026. Automate posting, generate captions, and analyze performance with these tools.",
   },
   {
@@ -230,7 +230,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-09",
     category: "ChatGPT Tips",
     readTime: "5 min read",
-    metaTitle: "Write Better Emails in Seconds Using ChatGPT | RepDex",
+    metaTitle: "ChatGPT Email Guide: How to Write Professional Emails Faster",
     metaDescription: "Learn how to use ChatGPT to write better emails faster. Prompts and techniques for professional, marketing, and outreach emails.",
   },
   {
@@ -242,7 +242,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-08",
     category: "Tech",
     readTime: "7 min read",
-    metaTitle: "AI Tools Transforming Blogging & Content Creation | RepDex",
+    metaTitle: "AI for Bloggers: How AI Tools are Changing Content Creation in 2026",
     metaDescription: "Explore how AI tools are reshaping blogging and content creation workflows, from idea generation and research to writing, editing, and publishing.",
   },
   {
@@ -254,7 +254,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-07",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "How AI Writing Tools Work: LLMs Explained Simply | RepDex",
+    metaTitle: "How AI Writing Works: Understanding LLMs and Language Models Clearly",
     metaDescription: "A clear explanation of how AI writing tools work. Understand large language models, training data, and what these tools can and can't do.",
   },
   {
@@ -266,7 +266,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-06",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Repurpose Content with AI: Turn 1 Post into Many | RepDex",
+    metaTitle: "Repurpose Content with AI: How to Turn One Post into Many Formats",
     metaDescription: "Learn how to repurpose blog posts, videos, and podcasts into multiple content formats using AI tools. Save time and reach more people.",
   },
   {
@@ -278,7 +278,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-05",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Tools for Video Creators in 2026 | RepDex",
+    metaTitle: "Cinematic AI: Professional Editing & Scripting Software",
     metaDescription: "The best AI tools for video creators in 2026. Editing, captioning, scripting, and thumbnail generation tools reviewed.",
   },
   {
@@ -290,11 +290,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-04",
     category: "ChatGPT Tips",
     readTime: "6 min read",
-    metaTitle: "Get Better ChatGPT Responses: Prompting Tips 2026 | RepDex",
+    metaTitle: "Better ChatGPT Results: Practical Tips for Effective Prompting",
     metaDescription: "Tips and techniques to get better, more useful responses from ChatGPT. Improve your prompts, set context, and get higher quality output.",
   },
   {
-    slug: "best-time-management-tools-2026",
+    slug: "best-time-management-tools",
     title: "Best Time Management Tools in 2026",
     excerpt: "Time management apps only work if you actually use them. These are the ones people stick with.",
     date: "March 1, 2026",
@@ -302,7 +302,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-03",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best Time Management Tools 2026 — Tested & Ranked | RepDex",
+    metaTitle: "Clockwork Efficiency: Best Apps for Focus & Productivity",
     metaDescription: "The best time management tools in 2026 for freelancers, remote workers, and busy professionals. Apps and methods that actually work.",
   },
   {
@@ -314,7 +314,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-02",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "Best Apps for Content Creators in 2026 | RepDex",
+    metaTitle: "Best Creator Apps 2026: Essential Software for Mobile & Desktop",
     metaDescription: "The best apps for content creators in 2026. Writing, design, video editing, scheduling, and analytics apps for mobile and desktop.",
   },
   {
@@ -326,7 +326,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-03-01",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Free AI Writing Tools Compared — Which Ones Win | RepDex",
+    metaTitle: "Free AI Writing Comparison: Which Tool is Best for Content?",
     metaDescription: "Side-by-side comparison of free AI writing tools. We tested ChatGPT, Gemini, Claude, Copy.ai, and more to find the best free options.",
   },
   {
@@ -338,7 +338,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-28",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best AI Tools for YouTube Creators in 2026 | RepDex",
+    metaTitle: "AI for YouTube creators: Best Tools for Scripts, SEO & Thumbnails",
     metaDescription: "Best AI tools for YouTube creators in 2026. Tools for scripting, editing, thumbnails, SEO, and growing your channel faster.",
   },
   {
@@ -350,7 +350,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-27",
     category: "ChatGPT Tips",
     readTime: "6 min read",
-    metaTitle: "ChatGPT for Students: Study Smarter in 2026 | RepDex",
+    metaTitle: "ChatGPT Student Guide: Using AI for Research and Study Projects",
     metaDescription: "Practical ChatGPT tips for students. How to use AI for research, studying, writing assignments, and learning new topics effectively.",
   },
   {
@@ -362,7 +362,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-26",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Best AI Writing Tools for Bloggers in 2026 | RepDex",
+    metaTitle: "Best AI Writing for Bloggers: Tools for Faster Drafting and Editing",
     metaDescription: "The best AI writing tools for bloggers in 2026. Practical tools for drafting, editing, and improving blog posts efficiently.",
   },
   {
@@ -374,7 +374,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-25",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Top AI Email Marketing Tools in 2026 — Reviewed | RepDex",
+    metaTitle: "Maximize ROI: Best AI Tools for Email Copy & Segmentation",
     metaDescription: "Top AI tools for email marketing in 2026. Improve your subject lines, copy, segmentation, and send times with these AI-powered tools.",
   },
   {
@@ -386,7 +386,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-24",
     category: "Tech",
     readTime: "7 min read",
-    metaTitle: "Best Tech Tools for Entrepreneurs in 2026 | RepDex",
+    metaTitle: "Tech for Entrepreneurs: The Best Tools for Running a Business Solo",
     metaDescription: "Essential tech tools for entrepreneurs in 2026. From project management to invoicing, the tools that help small business owners stay organised.",
   },
   {
@@ -398,7 +398,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-23",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best Time-Saving AI Tools in 2026 — Tested | RepDex",
+    metaTitle: "Productivity First: AI Tools That Actually Deliver Results",
     metaDescription: "AI tools that actually save you time in 2026. Tested tools for writing, scheduling, research, and automation that deliver real time savings.",
   },
   {
@@ -410,7 +410,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-22",
     category: "ChatGPT Tips",
     readTime: "5 min read",
-    metaTitle: "ChatGPT for Social Media: Write Captions in Seconds | RepDex",
+    metaTitle: "ChatGPT Social Captions: How to Write High-Converting Copy Faster",
     metaDescription: "Use ChatGPT to write social media captions for Instagram, Twitter, LinkedIn, and TikTok. Prompts and tips for each platform.",
   },
   {
@@ -422,7 +422,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-21",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Top AI Design Tools for Creatives in 2026 | RepDex",
+    metaTitle: "Design Superpowers: Top AI Software for Visual Assets",
     metaDescription: "Top AI tools for designers and creatives in 2026. Image generation, layout assistance, colour palettes, and design automation tools.",
   },
   {
@@ -434,7 +434,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-20",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Content Creation Tips for Beginners — 2026 Guide | RepDex",
+    metaTitle: "Content Creation for Beginners: 10 Practical Tips to Get Started",
     metaDescription: "Content creation tips for beginners. How to get started with blogging, social media, and video content without getting overwhelmed.",
   },
   {
@@ -446,7 +446,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-19",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Best Free AI Writing Tools in 2026 That Deliver | RepDex",
+    metaTitle: "Zero Cost Quality: Free AI Writing Software That Works",
     metaDescription: "Free AI writing tools that actually deliver. Tested and reviewed options for bloggers, students, and professionals who need quality output at zero cost.",
   },
   {
@@ -458,7 +458,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-18",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Productivity Tools 2026: Honest Review | RepDex",
+    metaTitle: "Tested & Reviewed: The Best AI Productivity Software",
     metaDescription: "An honest review of AI productivity tools in 2026. Which ones genuinely boost output and which ones are just hype? We tested them to find out.",
   },
   {
@@ -470,7 +470,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-17",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "Best Browser Extensions for Productivity in 2026 | RepDex",
+    metaTitle: "Chrome Supercharged: Must-Have Productivity Extensions",
     metaDescription: "The best browser extensions for productivity in 2026. Tab management, focus tools, writing aids, and workflow extensions that save time.",
   },
   {
@@ -482,7 +482,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-16",
     category: "ChatGPT Tips",
     readTime: "6 min read",
-    metaTitle: "Use ChatGPT for Research the Right Way in 2026 | RepDex",
+    metaTitle: "ChatGPT for Research: Practical Guide for Accurate Fact-Finding",
     metaDescription: "How to use ChatGPT as a research tool. Tips for getting accurate information, verifying facts, and using AI alongside traditional research methods.",
   },
   {
@@ -494,7 +494,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-15",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Productivity Hacks for Content Creators — 2026 | RepDex",
+    metaTitle: "Creator Productivity Hacks: How to Produce More with Less Effort",
     metaDescription: "Productivity hacks for content creators. Time management, batching, automation, and focus techniques to produce more without burnout.",
   },
   {
@@ -506,7 +506,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-14",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Write Blog Posts Faster Using AI: 2026 Workflow | RepDex",
+    metaTitle: "Write Blog Posts Faster: 5 AI Workflow Tips for Better Drafting",
     metaDescription: "How to write blog posts faster using AI tools. A practical workflow for researching, outlining, drafting, and editing posts in less time.",
   },
   {
@@ -518,11 +518,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-13",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Tools for Ecommerce Sellers in 2026 | RepDex",
+    metaTitle: "Ecommerce Growth: Best AI for Listings and Sales Velocity",
     metaDescription: "Top AI tools for ecommerce sellers in 2026. Product descriptions, image editing, customer service bots, and marketing automation tools reviewed.",
   },
   {
-    slug: "top-note-taking-apps-2026",
+    slug: "top-note-taking-apps",
     title: "Top Note-Taking Apps in 2026",
     excerpt: "Note-taking apps have become knowledge management systems. These are the best options for different workflows.",
     date: "February 10, 2026",
@@ -530,7 +530,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-12",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "Best Note-Taking Apps 2026 — Compared & Ranked | RepDex",
+    metaTitle: "Second Brain: Ranking the Top Digital Note Organizers",
     metaDescription: "The best note-taking apps in 2026. Notion, Obsidian, Apple Notes, and more compared for students, professionals, and creators.",
   },
   {
@@ -542,7 +542,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-11",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Improve Writing Quality with AI Tools in 2026 | RepDex",
+    metaTitle: "Improve Writing with AI 2026: Best Tools for Clarity and Style",
     metaDescription: "AI tools that improve writing quality. Grammar checkers, style editors, and readability tools for bloggers, students, and professionals.",
   },
   {
@@ -554,7 +554,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-10",
     category: "ChatGPT Tips",
     readTime: "5 min read",
-    metaTitle: "Get Perfect Formatting from ChatGPT Every Time | RepDex",
+    metaTitle: "ChatGPT Formatting Guide: How to Get Clean Tables and Lists",
     metaDescription: "ChatGPT formatting tips for better output. How to get clean headings, lists, tables, and structured content from ChatGPT every time.",
   },
   {
@@ -566,7 +566,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-09",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best Automation Tools for Bloggers in 2026 | RepDex",
+    metaTitle: "Automated Growth: Best Tools for Socials and Email",
     metaDescription: "Top automation tools for bloggers in 2026. Automate social sharing, email newsletters, content scheduling, and more to save hours every week.",
   },
   {
@@ -578,7 +578,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-08",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best AI Tools for Instagram Content Creation 2026 | RepDex",
+    metaTitle: "Visual Engagement: Best AI for Instagram Feed and Reels",
     metaDescription: "Best AI tools for Instagram content creation. Generate captions, design posts, plan feeds, and create Reels content with AI assistance.",
   },
   {
@@ -590,7 +590,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-07",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Best AI Research Tools 2026 — Tested & Compared | RepDex",
+    metaTitle: "Knowledge Extraction: Top AI Search and Analysis Apps",
     metaDescription: "The best AI research tools in 2026. Perplexity, Gemini, and other AI-powered research tools compared for accuracy, speed, and usability.",
   },
   {
@@ -602,7 +602,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-06",
     category: "Tech",
     readTime: "7 min read",
-    metaTitle: "Best Project Management Tools 2026 — Ranked | RepDex",
+    metaTitle: "Team Coordination: Top Project Management Software Reviewed",
     metaDescription: "Best project management tools in 2026. Asana, Notion, Linear, Monday, and more compared for freelancers, small teams, and larger organisations.",
   },
   {
@@ -614,7 +614,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-05",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Editing AI Content: Make AI Drafts Sound Human | RepDex",
+    metaTitle: "Edit AI Content Properly: Human Process for Refined AI Drafting",
     metaDescription: "How to edit AI-generated content for quality. A step-by-step editing process for turning AI drafts into polished, natural-sounding articles.",
   },
   {
@@ -626,7 +626,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-04",
     category: "ChatGPT Tips",
     readTime: "7 min read",
-    metaTitle: "ChatGPT vs Gemini, Claude & More: Full Comparison | RepDex",
+    metaTitle: "The AI Showdown: How ChatGPT Stacks Up Against the Rest",
     metaDescription: "How ChatGPT compares to Gemini, Claude, Copilot, and other AI assistants in 2026. Strengths, weaknesses, and which is best for what.",
   },
   {
@@ -638,7 +638,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-03",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "How to Automate Your Content Workflow in 2026 | RepDex",
+    metaTitle: "Automate Your Content Workflow: Best Tools for Faster Publishing",
     metaDescription: "How to automate your content workflow with AI and automation tools. From drafting to publishing, remove the repetitive steps from your process.",
   },
   {
@@ -650,7 +650,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-02",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Best AI Tools for Podcast Creators in 2026 | RepDex",
+    metaTitle: "Audio Excellence: Best AI Tools for Podcast Production",
     metaDescription: "Best AI tools for podcast creators in 2026. Transcription, editing, show notes, and promotion tools that save hours of production time.",
   },
   {
@@ -662,7 +662,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-02-01",
     category: "Content Creation",
     readTime: "5 min read",
-    metaTitle: "Content Planning with AI — Strategy Guide 2026 | RepDex",
+    metaTitle: "AI Content Planning Guide: Tools for Building Your Editorial Calendar",
     metaDescription: "How to plan content with AI tools. Build editorial calendars, generate topic ideas, and maintain consistency with AI-assisted planning.",
   },
   {
@@ -674,7 +674,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-31",
     category: "Tech",
     readTime: "7 min read",
-    metaTitle: "Must-Have Tech Tools for Online Businesses 2026 | RepDex",
+    metaTitle: "Business Infrastructure: Essential Software for Online Biz",
     metaDescription: "Essential tech tools for online businesses in 2026. Website builders, payment processing, email marketing, analytics, and more.",
   },
   {
@@ -686,7 +686,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-30",
     category: "Content Creation",
     readTime: "6 min read",
-    metaTitle: "Best Social Media Management Tools in 2026 | RepDex",
+    metaTitle: "Social Efficiency: Best Tools for Better Content Management",
     metaDescription: "Best tools for managing social media efficiently in 2026. Schedule posts, track analytics, and manage multiple accounts without the chaos.",
   },
   {
@@ -698,7 +698,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-29",
     category: "AI Tools",
     readTime: "6 min read",
-    metaTitle: "Top AI Tools for Freelancers in 2026 — Reviewed | RepDex",
+    metaTitle: "The Freelance Edge: Best AI Tools for Solo Success",
     metaDescription: "The best AI tools for freelancers in 2026. Writing, proposals, invoicing, scheduling, and marketing tools for independent professionals.",
   },
   {
@@ -710,7 +710,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-28",
     category: "ChatGPT Tips",
     readTime: "7 min read",
-    metaTitle: "Advanced ChatGPT Prompting Techniques in 2026 | RepDex",
+    metaTitle: "Advanced ChatGPT Prompts: Professional Techniques for Better AI Output",
     metaDescription: "Advanced ChatGPT prompting techniques for better output. Chain-of-thought, role-playing, few-shot examples, and other expert-level strategies.",
   },
   {
@@ -722,7 +722,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-27",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "AI Writing Tools vs Human Writers: The Truth | RepDex",
+    metaTitle: "AI Writing vs Human Writers: Honest Review of Output and Quality",
     metaDescription: "AI writing tools vs human writers: an honest comparison. What AI does well, where humans still win, and how the two work best together.",
   },
   {
@@ -734,7 +734,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-26",
     category: "Content Creation",
     readTime: "7 min read",
-    metaTitle: "Scale Content Production with AI: 2026 Strategy | RepDex",
+    metaTitle: "Scale Content with AI: Practical Strategies for High-Volume Publishing",
     metaDescription: "How to scale content production with AI tools. Strategies for producing more content without hiring more people or sacrificing quality.",
   },
   {
@@ -746,7 +746,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-25",
     category: "Tech",
     readTime: "6 min read",
-    metaTitle: "Best Grammar Checker Tools in 2026 — Compared | RepDex",
+    metaTitle: "Error-Free Writing: Top Grammar Checker Tools Compared",
     metaDescription: "Best grammar checker tools compared in 2026. Grammarly, ProWritingAid, Hemingway, and more tested for accuracy, features, and value.",
   },
   {
@@ -758,11 +758,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-24",
     category: "Content Creation",
     readTime: "5 min read",
-    metaTitle: "Best Focus Tools for Remote Workers in 2026 | RepDex",
+    metaTitle: "Deep Work: Best Focus Apps for Working from Home",
     metaDescription: "Best focus tools for remote workers in 2026. Website blockers, timers, ambient sound apps, and focus techniques for working from home.",
   },
   {
-    slug: "ai-tools-for-marketers-2026",
+    slug: "ai-tools-for-marketers",
     title: "AI Tools for Marketers — What's Worth Using in 2026",
     excerpt: "Marketing teams are drowning in AI tool options. These are the ones that actually move the needle.",
     date: "January 21, 2026",
@@ -770,11 +770,11 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-23",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Tools for Marketers in 2026 — Reviewed | RepDex",
+    metaTitle: "Marketing Performance: The Best AI Tools for Real Growth",
     metaDescription: "Best AI tools for marketers in 2026. Content creation, analytics, ad optimisation, and customer insights tools worth your budget.",
   },
   {
-    slug: "top-screen-recording-tools-2026",
+    slug: "top-screen-recording-tools",
     title: "Top Screen Recording Tools in 2026",
     excerpt: "Screen recording is essential for tutorials, demos, and async communication. These tools make it painless.",
     date: "January 20, 2026",
@@ -782,7 +782,7 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-22",
     category: "Tech",
     readTime: "5 min read",
-    metaTitle: "Best Screen Recording Tools in 2026 — Reviewed | RepDex",
+    metaTitle: "Async Professional: Best Screen Recording Software Compared",
     metaDescription: "The best screen recording tools in 2026. Loom, OBS, ScreenPal, and more compared for ease of use, features, and pricing.",
   },
   {
@@ -794,18 +794,12 @@ export const posts: Post[] = [
     modifiedISO: "2026-01-21",
     category: "AI Tools",
     readTime: "7 min read",
-    metaTitle: "Best AI Tools for Teachers & Educators in 2026 | RepDex",
+    metaTitle: "Educational Innovation: Top AI Tools for the Classroom",
     metaDescription: "Best AI tools for teachers and educators in 2026. Lesson planning, grading, student feedback, and classroom engagement tools reviewed.",
   },
 ];
 
-export const existingSlugs = new Set([
-  "best-free-ai-tools-for-content-creators",
-  "how-to-clean-chatgpt-text-before-publishing",
-  "top-ai-writing-tools-content-creators-us-uk-dubai",
-  "chatgpt-vs-gemini-vs-claude-best-ai-writing",
-  "ai-tools-transforming-content-creation-bloggers",
-]);
+
 
 export function getPostBySlug(slug: string): Post | undefined {
   return posts.find((p) => p.slug === slug);

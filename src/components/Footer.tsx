@@ -1,33 +1,76 @@
 import Link from "next/link";
 
+const footerNav = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "AI Tools", href: "/category/ai-tools" },
+  { label: "Tech", href: "/category/tech" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Disclaimer", href: "/disclaimer" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface)] mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand */}
           <div>
-            <p className="font-bold text-[var(--foreground)]">RepDex</p>
-            <p className="text-sm text-[var(--muted)]">
-              Your Guide to the Best AI &amp; Tech Tools
+            <Link href="/" className="hover:no-underline">
+              <span className="text-lg font-extrabold text-[var(--foreground)]">
+                RepDex
+              </span>
+            </Link>
+            <p className="text-sm text-[var(--muted)] mt-1">
+              Honest Reviews. Real Tools. No Fluff.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-4 text-sm text-[var(--muted)]">
-            <Link href="/about" className="hover:text-blue-600">
-              About
-            </Link>
-            <Link href="/contact" className="hover:text-blue-600">
-              Contact
-            </Link>
-            <Link href="/privacy" className="hover:text-blue-600">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-blue-600">
-              Terms of Use
-            </Link>
-          </nav>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="text-sm font-semibold text-[var(--foreground)] mb-3">
+              Navigation
+            </h4>
+            <nav className="flex flex-col gap-2">
+              {footerNav.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-[var(--muted)] hover:text-[var(--accent)] hover:no-underline transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-semibold text-[var(--foreground)] mb-3">
+              Legal
+            </h4>
+            <nav className="flex flex-col gap-2">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-[var(--muted)] hover:text-[var(--accent)] hover:no-underline transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
-        <div className="mt-6 pt-4 border-t border-[var(--border)] text-xs text-[var(--muted)]">
-          &copy; {new Date().getFullYear()} RepDex. All rights reserved.
+
+        <div className="mt-8 pt-6 border-t border-[var(--border)] text-xs text-[var(--muted)]">
+          &copy; 2026 RepDex. All rights reserved.
         </div>
       </div>
     </footer>
