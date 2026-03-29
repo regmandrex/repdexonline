@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/${post.slug}`,
     lastModified: post.modifiedISO,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.9,
   }));
 
   return [...mainPages, ...categoryPages, ...postPages];
