@@ -49,7 +49,7 @@ export async function GET() {
     <link>${SITE_URL}</link>
     <description>Expert, independent reviews of the best AI tools and tech reviews. We test the latest software so you don't have to.</description>
     <language>en-us</language>
-    <managingEditor>hello@repdex.online (${AUTHOR})</managingEditor>
+    <managingEditor>onlinerepdex@gmail.com (${AUTHOR})</managingEditor>
     <lastBuildDate>${now}</lastBuildDate>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml"/>
 ${staticItems}

@@ -127,10 +127,10 @@ export default function PrivacyPage() {
             If you have questions about this Privacy Policy, please contact
             us at{" "}
             <a
-              href="mailto:hello@repdex.online"
+              href="mailto:onlinerepdex@gmail.com"
               className="text-[var(--accent)]"
             >
-              hello@repdex.online
+              onlinerepdex@gmail.com
             </a>
             .
           </p>

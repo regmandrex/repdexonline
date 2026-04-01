@@ -53,6 +53,26 @@ const nextConfig: NextConfig = {
         destination: '/best-apps-for-content-creators',
         permanent: true,
       },
+      {
+        source: '/top-7-best-android-emulators-for-ios',
+        destination: 'https://androidemulatorforios.com',
+        permanent: true,
+      },
+      {
+        source: '/top-7-best-android-emulators-for-ios/',
+        destination: 'https://androidemulatorforios.com',
+        permanent: true,
+      },
+      {
+        source: '/usa/top-7-best-android-emulators-for-ios',
+        destination: 'https://androidemulatorforios.com',
+        permanent: true,
+      },
+      {
+        source: '/usa/top-7-best-android-emulators-for-ios/',
+        destination: 'https://androidemulatorforios.com',
+        permanent: true,
+      },
     ];
   },
 };
