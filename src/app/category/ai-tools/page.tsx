@@ -4,18 +4,18 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "AI Tools Reviews & Roundups 2026 — RepDex",
+  title: "AI Tools Reviews & Roundups — RepDex",
   description: "Reviews, comparisons, and roundups of the best AI tools for content creators and professionals.",
   alternates: {
     canonical: "/category/ai-tools",
   },
   openGraph: {
-    title: "AI Tools Reviews & Roundups 2026 — RepDex",
+    title: "AI Tools Reviews & Roundups — RepDex",
     description: "Reviews, comparisons, and roundups of the best AI tools for content creators and professionals.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Tools Reviews & Roundups 2026 — RepDex",
+    title: "AI Tools Reviews & Roundups — RepDex",
     description: "Reviews, comparisons, and roundups of the best AI tools for content creators and professionals.",
   },
 };

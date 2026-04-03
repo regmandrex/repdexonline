@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://repdex.online/sitemap.xml
-Feed: https://repdex.online/rss.xml

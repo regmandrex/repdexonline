@@ -4,18 +4,18 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Content Creation Tips & AI Tools 2026 — RepDex",
+  title: "Content Creation Tips & AI Tools — RepDex",
   description: "Guides and tools for creating better content faster, from blogging to social media to video.",
   alternates: {
     canonical: "/category/content-creation",
   },
   openGraph: {
-    title: "Content Creation Tips & AI Tools 2026 — RepDex",
+    title: "Content Creation Tips & AI Tools — RepDex",
     description: "Guides and tools for creating better content faster, from blogging to social media to video.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Content Creation Tips & AI Tools 2026 — RepDex",
+    title: "Content Creation Tips & AI Tools — RepDex",
     description: "Guides and tools for creating better content faster, from blogging to social media to video.",
   },
 };

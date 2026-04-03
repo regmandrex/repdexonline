@@ -4,18 +4,18 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Tech Tools & App Reviews 2026 — RepDex",
+  title: "Tech Tools & App Reviews — RepDex",
   description: "Tech guides, reviews, and how-tos for content creators and professionals.",
   alternates: {
     canonical: "/category/tech",
   },
   openGraph: {
-    title: "Tech Tools & App Reviews 2026 — RepDex",
+    title: "Tech Tools & App Reviews — RepDex",
     description: "Tech guides, reviews, and how-tos for content creators and professionals.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Tools & App Reviews 2026 — RepDex",
+    title: "Tech Tools & App Reviews — RepDex",
     description: "Tech guides, reviews, and how-tos for content creators and professionals.",
   },
 };

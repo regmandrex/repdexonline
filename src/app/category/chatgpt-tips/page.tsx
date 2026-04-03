@@ -4,18 +4,18 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "ChatGPT Tips, Tricks & Prompts 2026 — RepDex",
+  title: "ChatGPT Tips, Tricks & Prompts — RepDex",
   description: "Practical tips, prompts, and guides for getting more out of ChatGPT.",
   alternates: {
     canonical: "/category/chatgpt-tips",
   },
   openGraph: {
-    title: "ChatGPT Tips, Tricks & Prompts 2026 — RepDex",
+    title: "ChatGPT Tips, Tricks & Prompts — RepDex",
     description: "Practical tips, prompts, and guides for getting more out of ChatGPT.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ChatGPT Tips, Tricks & Prompts 2026 — RepDex",
+    title: "ChatGPT Tips, Tricks & Prompts — RepDex",
     description: "Practical tips, prompts, and guides for getting more out of ChatGPT.",
   },
 };
