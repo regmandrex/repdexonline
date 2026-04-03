@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RepDex — Best Free AI Tools Reviews for Content Creators",
+    default: "RepDex — Honest AI Tools Reviews for Content Creators",
     template: "%s | RepDex",
   },
   description:

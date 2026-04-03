@@ -24,14 +24,14 @@ export default function RelatedPosts({
   const sameCat = posts.filter(
     (p) => p.category === category && p.slug !== currentSlug
   );
-  related.push(...sameCat.slice(0, 3));
+  related.push(...sameCat.slice(0, 4));
 
   // If not enough, fill from other posts
-  if (related.length < 3) {
+  if (related.length < 4) {
     const others = posts.filter(
       (p) => p.slug !== currentSlug && !related.some((r) => r.slug === p.slug)
     );
-    related.push(...others.slice(0, 3 - related.length));
+    related.push(...others.slice(0, 4 - related.length));
   }
 
   if (related.length === 0) return null;
@@ -39,8 +39,8 @@ export default function RelatedPosts({
   return (
     <section className="mt-14 pt-8 border-t border-[var(--border)]">
       <h2 className="text-xl font-bold mb-6">Related Articles</h2>
-      <div className="grid sm:grid-cols-3 gap-5">
-        {related.slice(0, 3).map((post) => (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {related.slice(0, 4).map((post) => (
           <Link
             key={post.slug}
             href={`/${post.slug}`}
