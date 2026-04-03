@@ -1,6 +1,16 @@
 export const SITE_URL = "https://repdex.online";
 export const AUTHOR = "RepDex Editorial Team";
 
+export function getCategoryBadgeClass(category: string): string {
+  const map: Record<string, string> = {
+    "AI Tools": "badge-ai",
+    "ChatGPT Tips": "badge-chatgpt",
+    "Content Creation": "badge-content",
+    "Tech": "badge-tech",
+  };
+  return map[category] || "badge-ai";
+}
+
 export interface Post {
   slug: string;
   title: string;
