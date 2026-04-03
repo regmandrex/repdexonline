@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { posts, SITE_URL, AUTHOR, getCategorySlug } from "@/lib/posts";
-import { getPostContent } from "@/lib/content";
+import { posts, SITE_URL, AUTHOR, getCategorySlug, getCategoryBadgeClass } from "@/lib/posts";
 import JsonLd from "@/components/JsonLd";
 import NewsletterForm from "@/components/NewsletterForm";
 import FAQSection from "@/components/FAQSection";
@@ -55,15 +54,6 @@ const categories = [
   },
 ];
 
-function getCategoryBadgeClass(category: string): string {
-  const map: Record<string, string> = {
-    "AI Tools": "badge-ai",
-    "ChatGPT Tips": "badge-chatgpt",
-    "Content Creation": "badge-content",
-    "Tech": "badge-tech",
-  };
-  return map[category] || "badge-ai";
-}
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -149,38 +139,40 @@ export default function Home() {
       {/* ===== FEATURED ARTICLE ===== */}
       <section className="bg-[var(--surface-alt)] py-16 md:py-24 border-y border-[var(--border)]">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[var(--border-light)]">
-            <div className="mb-10 text-center max-w-2xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[var(--border-light)] text-center">
+            <Link
+              href={`/category/${getCategorySlug(featuredPost.category)}`}
+              className={`badge ${getCategoryBadgeClass(featuredPost.category)} mb-6 hover:no-underline inline-block`}
+            >
+              Featured {featuredPost.category} Article
+            </Link>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] mb-6 leading-tight tracking-tight">
               <Link
-                href={`/category/${getCategorySlug(featuredPost.category)}`}
-                className={`badge ${getCategoryBadgeClass(featuredPost.category)} mb-6 hover:no-underline inline-block`}
+                href={`/${featuredPost.slug}`}
+                className="text-[var(--foreground)] hover:text-[var(--accent)] hover:no-underline transition-colors"
               >
-                Featured {featuredPost.category} Article
+                {featuredPost.title}
               </Link>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] mb-6 leading-tight tracking-tight">
-                <Link 
-                  href={`/${featuredPost.slug}`}
-                  className="text-[var(--foreground)] hover:text-[var(--accent)] hover:no-underline transition-colors"
-                >
-                  {featuredPost.title}
-                </Link>
-              </h2>
-              <div className="flex items-center justify-center gap-4 text-sm text-[var(--muted)]">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[8px] font-bold text-blue-700">RD</span>
-                  <span className="font-medium">{AUTHOR}</span>
-                </div>
-                <span>·</span>
-                <time className="font-medium">{featuredPost.date}</time>
-                <span>·</span>
-                <span className="font-medium">{featuredPost.readTime}</span>
+            </h2>
+            <p className="text-[var(--muted)] text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+              {featuredPost.excerpt}
+            </p>
+            <div className="flex items-center justify-center gap-4 text-sm text-[var(--muted)] mb-8">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[8px] font-bold text-blue-700">RD</span>
+                <span className="font-medium">{AUTHOR}</span>
               </div>
+              <span>·</span>
+              <time className="font-medium">{featuredPost.date}</time>
+              <span>·</span>
+              <span className="font-medium">{featuredPost.readTime}</span>
             </div>
-            
-            <div 
-              className="prose-article article-content mt-12"
-              dangerouslySetInnerHTML={{ __html: getPostContent(featuredPost.slug) || "" }}
-            />
+            <Link
+              href={`/${featuredPost.slug}`}
+              className="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[var(--accent-hover)] hover:no-underline transition-colors shadow-sm"
+            >
+              Read Article
+            </Link>
           </div>
         </div>
       </section>
