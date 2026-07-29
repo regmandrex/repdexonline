@@ -79,6 +79,11 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="RepDex RSS Feed" href="/rss.xml" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8764610479002120"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <Suspense fallback={null}>

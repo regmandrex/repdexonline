@@ -57,25 +57,21 @@ const nextConfig: NextConfig = {
         source: '/top-7-best-android-emulators-for-ios',
         destination: 'https://androidemulatorforios.com',
         permanent: true,
-        statusCode: 301,
       },
       {
         source: '/top-7-best-android-emulators-for-ios/',
         destination: 'https://androidemulatorforios.com',
         permanent: true,
-        statusCode: 301,
       },
       {
         source: '/usa/top-7-best-android-emulators-for-ios',
         destination: 'https://androidemulatorforios.com',
         permanent: true,
-        statusCode: 301,
       },
       {
         source: '/usa/top-7-best-android-emulators-for-ios/',
         destination: 'https://androidemulatorforios.com',
         permanent: true,
-        statusCode: 301,
       },
     ];
   },
