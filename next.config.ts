@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'repdex.net' }],
+        destination: 'https://www.repdex.net/:path*',
+        // statusCode instead of `permanent: true`, which emits 308.
+        // The Redirect type accepts statusCode only when permanent is absent.
+        statusCode: 301,
+      },
+      {
         source: '/technology',
         destination: '/category/tech',
         permanent: true,
