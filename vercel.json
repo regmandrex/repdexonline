@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "repdex.online"
+        }
+      ],
+      "destination": "https://www.repdex.net/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.repdex.online"
+        }
+      ],
+      "destination": "https://www.repdex.net/:path*",
+      "statusCode": 301
+    }
+  ]
+}
