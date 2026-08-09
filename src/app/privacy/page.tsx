@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold mb-2">Introduction</h2>
           <p>
             RepDex (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates
-            the website repdex.online. This Privacy Policy explains how we
+            the website repdex.net. This Privacy Policy explains how we
             collect, use, and protect your information when you visit our
             website.
           </p>

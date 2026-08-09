@@ -1,4 +1,4 @@
-export const SITE_URL = "https://repdex.online";
+export const SITE_URL = "https://www.repdex.net";
 export const AUTHOR = "RepDex Editorial Team";
 
 export function getCategoryBadgeClass(category: string): string {

@@ -1,7 +1,9 @@
 "use client";
 
+import { SITE_URL } from "@/lib/posts";
+
 export default function ShareButtons({ title, slug }: { title: string; slug: string }) {
-  const url = `https://repdex.online/${slug}`;
+  const url = `${SITE_URL}/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 

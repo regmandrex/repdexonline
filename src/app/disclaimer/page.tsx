@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
 
       <div className="space-y-5 text-[var(--foreground)] leading-relaxed">
         <p>
-          The information provided on RepDex (repdex.online) is for general
+          The information provided on RepDex (repdex.net) is for general
           informational purposes only. All reviews and recommendations represent
           the opinions of the RepDex editorial team based on hands-on testing
           and research at the time of publication.

@@ -25,7 +25,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Acceptance of Terms</h2>
           <p>
-            By accessing and using repdex.online (&quot;the Site&quot;), you
+            By accessing and using repdex.net (&quot;the Site&quot;), you
             agree to be bound by these Terms of Use. If you do not agree
             with any part of these terms, please do not use the Site.
           </p>
