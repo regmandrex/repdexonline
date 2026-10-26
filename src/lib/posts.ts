@@ -40,6 +40,18 @@ export const posts: Post[] = [
   },
   // ===== REMAINING POSTS (by date, newest first) =====
   {
+    slug: "choosing-web-hosting-small-business-nigeria",
+    title: "Choosing Web Hosting for Your Small Business in Nigeria",
+    excerpt: "A practical guide to hosting options, costs, support, backups, and planning for a growing Nigerian business website.",
+    date: "October 27, 2026",
+    dateISO: "2026-10-27",
+    modifiedISO: "2026-10-27",
+    category: "Tech",
+    readTime: "5 min read",
+    metaTitle: "Choosing Web Hosting for a Small Business in Nigeria",
+    metaDescription: "Learn how to choose web hosting for your Nigerian small business, from hosting types and renewal costs to support, backups, and room to grow.",
+  },
+  {
     slug: "how-to-create-content-faster-with-ai",
     title: "How to Create Content Faster with AI",
     excerpt: "AI can cut your content production time in half — if you know which tools to use and when. Here's a practical breakdown.",

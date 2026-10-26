@@ -4,8 +4,10 @@ import { contentCreationContent } from "./content-creation";
 import { techReviewsContent } from "./tech-reviews";
 import { productivityContent } from "./productivity";
 import { aiWritingContent } from "./ai-writing";
+import { nigeriaHostingContent } from "./nigeria-hosting";
 
 const allContent: Record<string, string> = {
+  ...nigeriaHostingContent,
   ...aiToolsReviewsContent,
   ...chatgptTipsContent,
   ...contentCreationContent,
