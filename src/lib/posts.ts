@@ -40,6 +40,18 @@ export const posts: Post[] = [
   },
   // ===== REMAINING POSTS (by date, newest first) =====
   {
+    slug: "how-to-use-gibberish-creative-writing-word-games",
+    title: "How to Use Gibberish in Creative Writing, Captions, and Word Games",
+    excerpt: "Turn simple phrases into playful puzzles with clear gibberish rules, original examples, and practical ideas for stories and social captions.",
+    date: "November 1, 2026",
+    dateISO: "2026-11-01",
+    modifiedISO: "2026-11-01",
+    category: "Content Creation",
+    readTime: "5 min read",
+    metaTitle: "How to Use Gibberish in Writing, Captions & Word Games",
+    metaDescription: "Learn how gibberish works with original encoding examples, decoding tips, creative writing prompts, and word games for your audience.",
+  },
+  {
     slug: "choosing-web-hosting-small-business-nigeria",
     title: "Choosing Web Hosting for Your Small Business in Nigeria",
     excerpt: "A practical guide to hosting options, costs, support, backups, and planning for a growing Nigerian business website.",
